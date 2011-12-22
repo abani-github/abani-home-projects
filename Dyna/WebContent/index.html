@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" src="/Dyna/js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="/Dyna/js/rest.js"></script>
+</head>
+<body>
+	test page
+</body>
+<script type="text/javascript">
+$(document).ready(function(){
+	var xml = '<users><email>abani@in.com</email><firstName>abani</firstName><id>12</id><lastName>behera</lastName><password>behera</password><username>abani</username></users>';
+	var json = '{users:[{"email":"abani@in.com","firstName":"abani","id":"12","lastName":"behera","password":"behera","username":"abani"}]}';
+	//alert (xml);
+	/*var xmlCont = $('<xml>');
+	xmlCont.append(xml);
+	alert (xml.find('email').text());
+	$.ajax({
+	  type: 'POST',
+	  url: 'services/hallo/add',
+	  data: xml,
+	  success: success,
+	  dataType: 'xml'
+	});
+	function success (data){
+		alert ('got some thing ' + data);
+	}*/
+	alert(json.users);
+	addMessage(json);
+	 
+	//getMessages();
+});
+</script>
+</html>
