@@ -1,0 +1,14 @@
+{
+  identifier:"firstName",
+  label: "firstName",
+  items: [
+	{"email":"abani@in.com","firstName":"abani","id":"12","lastName":"behera","password":"behera","username":"abani"},
+	{"email":"mausumi@in.com","firstName":"mausumi","id":"13","lastName":"bisoyi","password":"mausumi22","username":"mausumi"},
+	{"email":"manoj@gmail.com","firstName":"manoj","id":"14","lastName":"bisoyi","password":"manoj","username":"manoj"},
+	{"email":"prem@gmail.com","firstName":"premjit","id":"15","lastName":"mohanty","password":"prem","username":"prem"},
+	{"email":"sagar@gmail.com","firstName":"sagar","id":"16","lastName":"panda","password":"sagar","username":"sagar"},
+	{"email":"badal@gmail.com","firstName":"badal","id":"17","lastName":"panda","password":"badal","username":"badal"},
+	{"email":"lisa@gmail.com","firstName":"monalisa","id":"18","lastName":"panda","password":"lisa","username":"lisa"},
+	{"email":"sony@gmail.com","firstName":"amrita","id":"19","lastName":"mishra","password":"sony","username":"sony"}
+  ]
+}
