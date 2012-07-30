@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/functions">
+	<f:loadBundle var="bundle" basename="resources.application" />
+	<h:head>
+		<title>JSF2 Demo Page</title>
+		<!-- <h:outputScript name="jquery.js" library="js" target="head" /> -->
+	</h:head>
+	<h:body>
+		<h:form id="demoForm">
+			<h:outputLabel for="targetAction" value="#{bundle['app.targetname']}" />
+			<h:inputText id="targetAction" value="#{greet.tagretAction}">
+				<f:ajax event="change" render="ajaxPanel" listener="#{greet.handleAjaxEvent}" />
+			</h:inputText>
+			<h:commandButton action="#{greet.invokeAction}" value="#{bundle['app.check']}"/> <br/>
+			
+			<h:outputLabel for="ajaxPanel" value="your ajax result" /> <br/>
+			<h:outputText id="ajaxPanel" value="#{greet.message}" />
+		</h:form>
+	</h:body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+	<f:loadBundle var="bundle" basename="resources.application" />
+	<h:head>
+		<title>JSF2 BVI Page</title>
+	</h:head>
+	<h:body>
+		<h:form id="demoForm">
+			<h:message for="targetAction" style="color :red" /><br />
+			<h:outputLabel for="targetAction" value="#{bundle['app.entername']}*" />
+			<h:inputText id="targetAction" value="#{reg.employee.name}" /><br />
+			<h:message for="targetEmail" style="color :red" /><br />
+			<h:outputLabel for="targetEmail" value="#{bundle['app.enteremail']}" />
+			<h:inputText id="targetEmail" value="#{reg.employee.email}" />
+			<h:commandButton action="#{reg.register}" value="Save"/>
+		</h:form>
+	</h:body>
+</html>
