@@ -19,5 +19,7 @@
 			<h:inputText id="targetEmail" value="#{reg.employee.email}" />
 			<h:commandButton action="#{reg.register}" value="Save"/>
 		</h:form>
+		<hr />
+		<h:outputLabel value="#{reg.employee}" rendered="#{reg.employee.name != null}"/>
 	</h:body>
 </html>
