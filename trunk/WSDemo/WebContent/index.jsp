@@ -10,6 +10,8 @@
 <body>
 	Server-Push page powered by WebSocket
 	<div>
+		<label for="mText">Enter Message </label>
+		<input type="text" disabled="disabled" id="mText" />
 		<button id="conB" onclick="connect(this)">Connect</button>
 		<button id="sndB" disabled="disabled" onclick="sendMsg()">Send Message</button>
 		<button id="clsB" disabled="disabled" onclick="closeWS(this)">Close</button>
@@ -26,9 +28,9 @@
 	connect = function(obj){
 		obj.disabled = true;
 		document.getElementById('clsB').disabled = false;
+		document.getElementById('mText').disabled = false;
 		document.getElementById('sndB').disabled = false;
 		ws = new WebSocket(host);
-		alert (ws);
 		ws.onopen = function () {
 			alert ('connected');
 		};
@@ -37,15 +39,27 @@
 		};
 	};
 	sendMsg = function() {
-		//alert(ws);
-		ws.send(generateMsg());
+		var msg = document.getElementById('mText').value;
+		if (msg.isEmpty()){
+			alert("Please enter some message");
+		}else{
+			ws.send(msg);	
+			document.getElementById('mText').value = "";
+		}
 	};
 	closeWS = function(obj) {
 		obj.disabled = true;
 		document.getElementById('sndB').disabled = true;
-		alert('connection closed');
 		document.getElementById('conB').disabled = false;
+		document.getElementById('mText').disabled = true;
 		ws.close();
+	};
+	String.prototype.isEmpty = function(){
+		var bIsEmpty = false;
+		if (this.length == 0){
+			bIsEmpty = true;
+		}
+		return bIsEmpty;
 	};
 	generateMsg = function(){
 		var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
