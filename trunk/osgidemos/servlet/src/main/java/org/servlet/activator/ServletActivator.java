@@ -17,13 +17,14 @@ import org.osgi.service.http.HttpService;
 public class ServletActivator implements BundleActivator {
 	private static final Logger LOGGER = Logger.getLogger(ServletActivator.class.getName());
 	public void start(BundleContext ctx) throws Exception {
-		LOGGER.info("Registering Servlet");
+		LOGGER.info("Registering Servlets");
 		ServiceReference sRef = ctx.getServiceReference(HttpService.class.getName());
 		if ( null != sRef ) {
 			HttpService httpService = (HttpService)ctx.getService(sRef);
 			httpService.registerServlet("/hallo", new SimpleServlet(), null, null);
+			httpService.registerServlet("/osgipost", new PostServlet(), null, null);
 		}
-		LOGGER.info("Servlet Registered");
+		LOGGER.info("Servlets Registered");
 	}
 
 	public void stop(BundleContext arg0) throws Exception {
